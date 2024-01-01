@@ -14,6 +14,12 @@
 //   }
 
 
+// if (year == 2019) {
+    //     alert( " corona!" );
+    //     alert( "You're so smart!" );
+    //   }
+    
+
 //  let accessAllowed;
 
 // let age = prompt('How old are you?', '');
