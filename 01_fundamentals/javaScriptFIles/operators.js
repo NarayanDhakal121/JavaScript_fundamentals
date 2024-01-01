@@ -104,7 +104,93 @@
 // alert(a+b);
 // alert (typeof(a + b));
 
-let a = +prompt("First number?", 1);// + helps in converting number to strings
-let b = +prompt("Second number?", 2);
+// let a = +prompt("First number?", 1);// + helps in converting number to strings
+// let b = +prompt("Second number?", 2);
 
-alert(a + b);
+// alert(a + b);
+
+
+
+// Logical operators
+
+// alert( null || 2 || undefined );
+// alert( alert(1) || 2 || alert(3) );
+// alert( 1 && null && 2 );
+// alert( alert(1) && alert(2) );
+
+
+
+// let age =prompt("enter your age")
+
+// if (age >= 14 && age <= 90){
+// alert("you are in range")
+// }else{
+//     alert('you are out of range')
+// }
+
+
+// let age =prompt("enter your age")
+
+// if (age<14 && age >90){
+// alert("you are in range")
+// }else{
+//     alert('you are out of range')
+// }
+
+// if (-1 || 0) alert( 'first' );
+// if (-1 && 0) alert( 'second' );
+
+// if (null || -1 && 1) alert( 'third' );
+
+// let userName = prompt("Who's there?", '');
+
+// if (userName === 'Admin') {
+
+//   let pass = prompt('Password?', '');
+
+//   if (pass === 'TheMaster') {
+//     alert( 'Welcome!' );
+//   } else if (pass === '' || pass === null) {
+//     alert( 'Canceled' );
+//   } else {
+//     alert( 'Wrong password' );
+//   }
+
+// } else if (userName === '' || userName === null) {
+//   alert( 'Canceled' );
+// } else {
+//   alert( "I don't know you" );
+// }
+
+
+
+
+// Nullish coalescing operator
+
+// let user;
+
+// alert(user ?? "Anonymous");
+
+// let firstName = null;
+// let lastName = null;
+// let nickName = "Supercoder";
+
+// alert(firstName ?? lastName ?? nickName ?? "Anonymous");
+
+// let height = 0;
+
+// alert(height || 100); 
+// alert(height ?? 100)
+
+
+// let height = null;
+// let width = null;
+
+
+// let area = (height ?? 100) * (width ?? 50);
+
+// alert(area);
+
+// let x = (1 && 2) ?? 3; 
+
+// alert(x);
