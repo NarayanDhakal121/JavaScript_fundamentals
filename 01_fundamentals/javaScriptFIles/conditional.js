@@ -14,11 +14,7 @@
 //   }
 
 
-// if (year == 2019) {
-    //     alert( " corona!" );
-    //     alert( "You're so smart!" );
-    //   }
-    
+
 
 //  let accessAllowed;
 
