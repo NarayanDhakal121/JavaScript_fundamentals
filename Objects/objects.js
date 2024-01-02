@@ -292,4 +292,87 @@ let user = {
   console.log(family);
 
 
+  // This keyword 
+
+  let user = {
+    name: "John",
+    age: 30,
   
+    sayHi() {
+      alert(this.name);
+    }
+  
+  };
+  
+  user.sayHi();
+
+
+  //Arrow function this
+
+  let user = {
+    firstName: "Ilya",
+    sayHi() {
+      let arrow = () => alert(this.firstName);
+      arrow();
+    }
+  };
+  
+  user.sayHi();
+
+
+// Tasks using "this in object literals"
+
+function makeUser() {
+  return {
+    name: "John",
+    ref: this
+  };
+}
+
+let user = makeUser();
+
+alert( user.ref.name );
+
+
+
+//Task 2 create a Calculator
+
+let calculator = {
+  sum() {
+    return this.a + this.b;
+  },
+
+  mul() {
+    return this.a * this.b;
+  },
+
+  read() {
+    this.a = +prompt('a?', 0);
+    this.b = +prompt('b?', 0);
+  }
+};
+
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );
+
+
+// Task 3  
+
+let ladder = {
+  step: 0,
+  up() {
+    this.step++;
+    return this;
+  },
+  down() {
+    this.step--;
+    return this;
+  },
+  showStep() {
+    alert( this.step );
+    return this;
+  }
+};
+
+ladder.up().up().down().showStep().down().showStep();
