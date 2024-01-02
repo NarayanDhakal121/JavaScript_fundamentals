@@ -474,3 +474,37 @@ let usery = null;
 
 alert( userx?.[key] ); 
 alert( usery?.[key] );
+
+
+
+
+
+//symbol types
+
+let id1 = Symbol("id");
+let id2 = Symbol("id");
+
+alert(id1 == id2); 
+
+
+//Hidden properties
+
+let user = { 
+  name: "John"
+};
+
+let id = Symbol("id");
+
+user[id] = 1;
+
+alert( user[id] );
+
+
+
+//Global symbol
+
+// let id = Symbol.for("id"); 
+
+// let idAgain = Symbol.for("id");
+// alert( id === idAgain );
+
