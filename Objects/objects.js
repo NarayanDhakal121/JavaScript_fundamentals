@@ -508,3 +508,36 @@ alert( user[id] );
 // let idAgain = Symbol.for("id");
 // alert( id === idAgain );
 
+//objects to premative conversion
+
+// let obj1 = { value: "123" };
+// let obj2 = { value: "456" };
+// let isGreater = obj1.value > obj2.value;
+
+// console.log(isGreater)
+
+
+//toSring/valueOf
+let user = {
+  name: "John",
+  money: 1000,
+
+  [Symbol.toPrimitive](hint) {
+    alert(`hint: ${hint}`);
+    return hint == "string" ? `{name: "${this.name}"}` : this.money;
+  }
+};
+
+alert(user); 
+alert(+user); 
+alert(user + 500); 
+
+//further convention
+
+let obj = {
+  toString() {
+    return "2";
+  }
+};
+
+alert(obj + 2); 
