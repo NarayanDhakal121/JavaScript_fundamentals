@@ -429,3 +429,48 @@ let accumulator = new Accumulator(1);
 accumulator.read();
 accumulator.read();
 alert(accumulator.value);
+
+
+
+
+//optional chaining
+
+let user = null;
+
+alert( user?.address ); 
+alert( user?.address.street );
+
+//short-circuting
+
+let user = null;
+let x = 0;
+
+user?.sayHi(x++); 
+
+alert(x);
+
+//other varients
+// let userAdmin = {
+//   admin() {
+//     alert("I am admin");
+//   }
+// };
+
+// let userGuest = {};
+
+// userAdmin.admin?.(); 
+
+// userGuest.admin?.()
+
+
+
+let key1 = "firstName";
+
+let userx = {
+  firstName: "John"
+};
+
+let usery = null;
+
+alert( userx?.[key] ); 
+alert( usery?.[key] );
