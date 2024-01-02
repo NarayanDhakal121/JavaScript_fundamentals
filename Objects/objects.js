@@ -376,3 +376,56 @@ let ladder = {
 };
 
 ladder.up().up().down().showStep().down().showStep();
+
+
+//Tasks of operator COnstructor and new
+
+//Task 1
+
+let obj = {};
+
+function A() { return obj; }
+function B() { return obj; }
+
+alert( new A() == new B() );
+
+//Task 2
+//calculator
+
+// function Calculator2() {
+
+//   this.read = function() {
+//     this.a = +prompt('a?', 0);
+//     this.b = +prompt('b?', 0);
+//   };
+
+//   this.sum = function() {
+//     return this.a + this.b;
+//   };
+
+//   this.mul = function() {
+//     return this.a * this.b;
+//   };
+// }
+
+// let calculator2 = new Calculator2();
+// calculator.read();
+
+// alert( "Sum=" + calculator.sum() );
+// alert( "Mul=" + calculator.mul() );
+
+// task 3
+
+function Accumulator(startingValue) {
+  this.value = startingValue;
+
+  this.read = function() {
+    this.value += +prompt('How much to add?', 0);
+  };
+
+}
+
+let accumulator = new Accumulator(1);
+accumulator.read();
+accumulator.read();
+alert(accumulator.value);
