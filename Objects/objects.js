@@ -189,6 +189,8 @@ function multiplyNumeric(obj) {
             obj[key] *= 2;
         }
     }
+
+    
     console.log(obj);
 }
 
@@ -199,3 +201,92 @@ function multiplyNumeric(obj) {
  };
 
  multiplyNumeric(obj);
+
+
+ // copying the referance
+
+//  let a = {};
+// let b = a; 
+
+// alert( a == b ); 
+// alert( a === b );
+
+
+let user = {
+    name: "John",
+    age: 30
+  };
+  
+  let clone = {}; 
+  for (let key in user) {
+    clone[key] = user[key];
+  }
+  clone.name = "Pete";
+  
+  alert( user.name ); 
+
+  // object.assign method
+
+  let user = { name: "John" };
+
+let permissions1 = { canView: true };
+let permissions2 = { canEdit: true };
+
+Object.assign(user, permissions1, permissions2);
+alert(user.name);
+alert(user.canView); 
+alert(user.canEdit);
+
+//Nested cloning
+
+let user = {
+    name: "John",
+    sizes: {
+      height: 182,
+      width: 50
+    }
+  };
+  
+  let clone = Object.assign({}, user);
+  
+  alert( user.sizes === clone.sizes );
+  user.sizes.width = 60;
+  alert(clone.sizes.width);
+
+
+  // structural clone
+
+  let user = {
+    name: "John",
+    sizes: {
+      height: 182,
+      width: 50
+    }
+  };
+  
+  let clone = structuredClone(user);
+  
+  alert( user.sizes === clone.sizes ); 
+  user.sizes.width = 60;   
+  alert(clone.sizes.width);
+  
+  //Garbage collection
+  //interlinked objects
+
+  function marry(man, woman) {
+    woman.husband = man;
+    man.wife = woman;
+  
+    return {
+      father: man,
+      mother: woman
+    }
+  }
+  
+  let family = marry({
+    name: "John"
+  }, {
+    name: "Ann"
+  });
+
+  console.log(marry);
