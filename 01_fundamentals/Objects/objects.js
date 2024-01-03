@@ -1,6 +1,7 @@
 // let user = new object(); //object COnstructor
 
 // let user1 ={}// Object literals
+// console.log(user1)
 
 
 // Literals and properties
@@ -610,3 +611,87 @@ return Object.getOwnPropertyNames(obj);
 
 console.log(all_properties(Math));
 console.log(all_properties(Array));
+
+
+
+//more on objects
+
+let car = {
+  make: 'Toyota',
+  model: 'Camry',
+  year: 2020
+};
+console.log(car);
+
+//ie 2
+
+let person = {
+  name: 'Ram',
+  age: 30,
+  address: {
+    city: 'ktm',
+    country: 'nep'
+  }
+};
+console.log(person);
+
+// ie 3
+function Book(title, author, pages) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+}
+
+let book = new Book('JavaScript, objects', 'random', 1);
+console.log(book);
+
+//ie 4
+
+let student = {
+  name: 'Subbash',
+  grades: [90, 85, 88, 92]
+};
+console.log(student);
+
+// ie 5
+let objectWithSymbol = {
+  [Symbol('id')]: 1
+};
+console.log(objectWithSymbol);
+
+//ie 6
+
+
+// function Student(name, grades) {
+//   this.name = name;
+//   this.grades = grades;
+//   this.getAverageGrade = function() {
+//     let sum = this.grades.reduce((a, b) => a + b, 0);
+//     return sum / this.grades.length;
+//   };
+// }
+
+// let student = new Student('John', [90, 85, 88, 92]);
+// console.log(student);
+// console.log(student.getAverageGrade());
+
+
+//ie 7
+// let car = {
+//   make: 'Toyota',
+//   model: 'Camrye',
+//   year: 2023,
+//   owner: {
+//     firstName: 'abcc',
+//     lastName: 'deff'
+//   },
+//   startEngine: function() {
+//     return 'Engine started';
+//   },
+//   stopEngine: function() {
+//     return 'Engine stopped';
+//   }
+// };
+// console.log(car);
+// console.log(car.startEngine());
+// console.log(car.stopEngine());
