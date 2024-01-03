@@ -541,3 +541,72 @@ let obj = {
 };
 
 alert(obj + 2); 
+
+
+// practising on object 
+
+var library = [ 
+  {
+      title: 'Bill Gates',
+      author: 'The Road Ahead',
+      readingStatus: true
+  },
+  {
+      title: 'Steve Jobs',
+      author: 'Walter Isaacson',
+      readingStatus: true
+  },
+  {
+      title: 'Mockingjay: The Final Book of The Hunger Games',
+      author: 'Suzanne Collins',
+      readingStatus: false
+  }];
+
+for (var i = 0; i < library.length; i++) 
+ {
+  var book = "'" + library[i].title + "'" + ' by ' + library[i].author + ".";
+  if (library[i].readingStatus) {
+    console.log("Already read " + book);
+  } else
+  {
+   console.log("You still need to read " + book);
+  }
+ }
+ 
+
+
+ // ....javascript program to find the length of javascript object
+
+ Object.objsize = function(Myobj) {
+  var osize = 0, key;
+  for (key in Myobj) {
+      if (Myobj.hasOwnProperty(key)) osize++;
+  }
+  return osize;
+};
+
+var student = { 
+name : "David Rayy", 
+sclass : "VI", 
+rollno : 12 
+};
+
+var objsize = Object.objsize(student);
+console.log('Size of the current object : '+objsize);
+
+//program to print all the javascript object
+
+function FindAllMethods(obj) {
+  return Object.getOwnPropertyNames(obj).filter(function(property) {
+      return typeof obj[property] == "function";
+  });
+}
+console.log(FindAllMethods(Math));
+console.log(FindAllMethods(Array));
+function all_properties(obj) 
+{
+return Object.getOwnPropertyNames(obj);
+}
+
+console.log(all_properties(Math));
+console.log(all_properties(Array));
