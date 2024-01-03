@@ -402,3 +402,137 @@ shuffle(arr);
 alert(arr);
 
 
+//Arrays questions for practise pop method
+
+// let dailyActivities = ['work', 'eat', 'sleep', 'exercise'];
+// dailyActivities.pop();
+// console.log(dailyActivities);
+// const removedElement = dailyActivities.pop();
+
+// console.log(removedElement);
+// console.log(dailyActivities);  
+
+//Arrays questions for practise shift  method
+
+// let dailyActivities1 = ['work', 'eat', 'sleep', 'exercise'];
+// dailyActivities.shift();
+// console.log(dailyActivities);
+// const removedElement1 = dailyActivities.shift();
+
+// console.log(removedElement1);
+
+
+//Arrays .length method//.sort//tofind index of //slice //contatination
+let dailyActivities = ['sleep', 'work', 'exercise'];
+let newRoutine = ['eat'];
+
+console.log(dailyActivities.length);
+dailyActivities.sort();
+console.log(dailyActivities); 
+const position = dailyActivities.indexOf('work');
+console.log(position); 
+const newDailyActivities = dailyActivities.slice(1);
+console.log(newDailyActivities); 
+const routine = dailyActivities.concat(newRoutine);
+console.log(routine);
+
+
+//push method
+
+// let arr = ['h', 'e'];
+// let arr1 = arr;
+// arr1.push('l');
+
+// console.log(arr); 
+// console.log(arr1);
+
+// for each
+
+let students = ['John', 'Sara', 'Jack'];
+students.forEach(myFunction);
+
+function myFunction(item) {
+
+    console.log(item);
+}
+
+//eg 2
+
+const numbers = [65, 44, 12, 4];
+let sum = 0;
+
+numbers.forEach(function(item) {
+  sum += item;
+});
+
+console.log(sum); 
+
+// eg 3
+
+let students = ['John', 'Sara', 'Jack'];
+students.forEach(myFunction);
+
+function myFunction(item, index, arr)
+ {
+    arr[index] = 'Hello ' + item;
+  }
+console.log(students);
+
+//for each with arrow function
+
+// const fruits = ['apple', 'banana', 'mango'];
+
+// fruits.forEach((fruit, index) => {
+//   console.log(`The fruit at index ${index} is ${fruit}`);
+// });
+
+// eg 2
+
+// const students = [
+//   { name: 'John', grade: 8 },
+//   { name: 'Sara', grade: 9 },
+//   { name: 'Jack', grade: 10 },
+// ];
+
+// students.forEach(student => {
+//   console.log(`${student.name} is in grade ${student.grade}`);
+// });
+
+//for loop to forEach
+const arrayItems = ['item1', 'item2', 'item3'];
+const copyItems = [];
+
+for (let i = 0; i < arrayItems.length; i++) {
+  copyItems.push(arrayItems[i]);
+}
+
+console.log(copyItems);
+
+//using forEach
+// const arrayItems = ['item1', 'item2', 'item3'];
+// const copyItems = [];
+// arrayItems.forEach(function(item){
+//   copyItems.push(item);
+// })
+
+// console.log(copyItems);
+
+// iterate through set using foreEach()
+const set = new Set([1, 2, 3]);
+set.forEach(myFunction);
+
+function myFunction(item) {
+    console.log(item);
+}
+
+//forEach with map
+// we can iterate through map using forEach()
+let map = new Map();
+map.set('name', 'Jack');
+map.set('age', '27');
+map.forEach (myFunction);
+
+function myFunction(value, key) {
+    
+    console.log(key + '- ' + value);
+}
