@@ -221,14 +221,16 @@
 //   func(); 
 //   sayHi();
 
-// function ask(question, yes, no) {
-//     if (confirm(question)) yes()
-//     else no();
-//   }
+// function practise
+
+function ask(question, yes, no) {
+    if (confirm(question)) yes()
+    else no();
+  }
   
-//   function showOk() {
-//     alert( "You agreed." );
-//   }
+  function showOk() {
+    alert( "You agreed." );
+  }
   
 //   function showCancel() {
 //     alert( "You canceled the execution." );
@@ -263,43 +265,169 @@
 // Arrow functions
 
 // let sum = (a, b) => a + b;
-
-
 // let sum = function(a, b) {
 //   return a + b;
 // };
-
-
 // alert( sum(1, 2) ); 
-
 // let double = n => n * 2;
 // alert( double(3) );
 
-// let age = prompt("What is your age?", 18);
+let age = prompt("What is your age?", 18);
 
-// let welcome = (age < 18) ?
-//   () => alert('Hello!') :
-//   () => alert("Greetings!");
+let welcome = (age < 18) ?
+  () => alert('Hello!') :
+  () => alert("Greetings!");
 
-// welcome();
+welcome();
 
 //multiline arrow function
 
-// let sum = (a, b) => {  
-//     return result; 
-//   };
+let sum = (a, b) => {  
+    return result; 
+  };
   
-//   alert( sum(1, 2) );
+  alert( sum(1, 2) );
 
   //Taks
 
-//   function ask(question, yes, no) {
-//     if (confirm(question)) yes();
-//     else no();
-//   }
+  function ask(question, yes, no) {
+    if (confirm(question)) yes();
+    else no();
+  }
   
-//   ask(
-//     "Do you agree?",
-//     () => alert("You agreed."),
-//     () => alert("You canceled the execution.")
-//   );
+  ask(
+    "Do you agree?",
+    () => alert("You agreed."),
+    () => alert("You canceled the execution.")
+  );
+
+
+// 
+
+//practises for javascript function
+
+let x = function (num) { return num * num };
+console.log(x(4));
+
+let y = x(3);
+console.log(y);
+
+// i.e 2
+// javascript variable scopes
+let a = "hello";
+function greet() {
+    a = 3;
+}
+console.log(a);
+
+greet();
+console.log(a); 
+
+//local scopes
+let c= "hello";
+
+function greet() {
+    let b = "World"
+    console.log(c + b);
+}
+
+greet();
+console.log(c+ b);
+
+//let in block scoped
+
+// program showing block-scoped concept
+// global variable
+let a = 'Hello';
+
+function greet() {
+
+    let b = 'World';
+
+    console.log(a + ' ' + b);
+
+    if (b == 'World') {
+        let c = 'hello';
+        console.log(a + ' ' + b + ' ' + c);
+    }
+    console.log(a + ' ' + b + ' ' + c);
+}
+
+greet();
+
+//javascript hoisting
+
+console.log(test);
+var test;
+
+
+// i.e 2
+
+a = 5;
+console.log(a);
+var a;
+
+//i.e 3
+var a = 4;
+
+function greet() {
+    b = 'hello';
+    console.log(b); 
+    var b;
+}
+greet(); 
+console.log(b);
+
+//i.e 4 function hoisting
+
+greet();
+
+function greet() {
+    console.log('Hi, there.');
+}
+
+// recursion
+
+function countDown(number) {
+  console.log(number);
+  const newNumber = number - 1;
+
+  if (newNumber > 0) {
+      countDown(newNumber);
+  }
+}
+
+countDown(100);
+
+//i.e 2
+
+function factorial(x) {
+
+  if (x === 0) {
+      return 1;
+  }
+  else {
+      return x * factorial(x - 1);
+  }
+}
+
+const num = 3;
+if (num > 0) {
+  let result = factorial(num);
+  console.log(`The factorial of ${num} is ${result}`);
+}
+
+//function that returns the function
+
+function functionReturnsF() {
+    return function() {
+        return "This is a function that returns a function";
+    }
+}
+console.log(functionReturnsF()());
+
+// function with rest parameters
+function functionWithRP(...params) {
+    return `function with rest parameters: ${params}`;
+}
+console.log(functionWithRP("param1", "param2", "param3"));
