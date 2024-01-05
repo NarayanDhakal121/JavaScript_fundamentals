@@ -100,3 +100,130 @@ function foo(n){
 }
 foo(5)
 
+// Nested function and closures
+
+function addSquare(a, b){
+    function square(x){
+        return x*x;
+        
+    }
+   
+   return {result: square(a)+ square(b), square:square}
+}
+var result= (addSquare(2, 3))
+console.log(result)
+console.log(result.square(5));
+
+
+// you can call the outer function and specify arguments for both the outer and inner function
+
+function outside(x){
+    function inside(y){
+        return x+y;
+    }
+    return inside
+}
+
+const add = outside(3);
+
+// console.log(add(4));
+
+// closures
+
+function createGreeting(greeting){
+    return function(name){
+        return `${greeting}, ${name}!`;
+    };
+}
+const sayHello = createGreeting('hello');
+const sayHi = createGreeting('Hi');
+
+
+// console.log(sayHello('Aman'));
+// console.log(sayHi('prasun'));
+
+//using the argumental objects
+
+function myConcat(seperator){
+    let result="";
+    for (let i = 1; i < arguments.length; i++) {
+         result += arguments[i]+seperator;
+   
+}
+return result
+}
+
+
+// console.log(myConcat(". ", "sage", "basil", "oregano", "pepper", "parsley"));
+
+
+//function parameter
+
+//default
+
+// function multiply(a, b) {
+//     b = typeof b !== "undefined" ? b : 3;
+//     return a * b;
+//   }
+  
+//   console.log(multiply(5));
+
+function multiply(a, b=1) {
+return a * b;
+}
+
+
+//rest parameters
+
+function multiply(multiplier, ...theArgs) {
+    return theArgs.map((x) => multiplier * x);
+  }
+  
+  const arr = multiply(2, 1, 2, 3);
+//   console.log(arr);
+
+  //i.e
+
+  function adding(adder, ...theArgs){
+return theArgs.map((x)=> adder+x);
+  }
+  const arr2 = adding(2, 3, 4, 5)
+//   console.log(arr2)
+
+//Arrow functions
+
+const a = ["Hydrogen", "Helium", "Lithium", "Beryllium"];
+
+const a2 = a.map(function (s) {
+  return s.length;
+});
+
+// console.log(a2);
+
+const a3 = a.map((s) => s.length);
+
+// console.log(a3)
+
+//use of this keyword 
+
+// const person = {
+//     firstName: "Alice",
+//     lastName: "Smith",
+//     fullName: () => {
+//       return `${this.firstName} ${this.lastName}`;
+//     }
+//   };
+  
+//   console.log(person.fullName()); 
+  
+const person = {
+    firstName: "Alice", 
+    lastName: "Smith",
+    fullName: function() {
+      return `${this.firstName} ${this.lastName}`;
+    }
+  };
+  
+  console.log(person.fullName()); 
+  
+  
