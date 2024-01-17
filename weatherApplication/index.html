@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="weather-card">
+        <div class="search-bar">
+            <input type="text" placeholder="Enter city name" id="city-input">
+            <button id="search-btn">Search</button>
+        </div>
+        <div class="weather-info">
+            <img src="images/rain.png" alt="Weather icon" id="weather-icon">
+            <h1 id="temperature">22°C</h1>
+            <h2 id="city-name">Kathmandu</h2>
+            <div class="details">
+                <div class="detail-item">
+                    <img src="images/Humadity.png" alt="Humidity icon">
+                    <p id="humidity">50%</p>
+                    <p>Humidity</p>
+                </div>
+                <div class="detail-item">
+                    <img src="images/wind.png" alt="Wind icon">
+                    <p id="wind-speed">18km/hr</p>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const apiUrl = "https://api.weatherapi.com/v1/current.json?key=c7136eb90e3346519b3120917241701&q=London&aqi=no";
+        const searchBox = document.querySelector(".search-bar #city-input");
+        const searchBtn = document.querySelector(".search-bar #search-btn");
+        const weatherIcon = document.querySelector("#weather-icon");
+
+        async function checkWeather(city) {
+    try {
+        const response = await fetch(apiUrl + city);
+        const data = await response.json(); 
+
+        document.querySelector("#city-name").innerHTML = data.location.name;
+        document.querySelector("#temperature").innerHTML = Math.round(data.current.temp_c) + "°C";
+        document.querySelector("#humidity").innerHTML = data.current.humidity + "%";
+        document.querySelector("#wind-speed").innerHTML = data.current.wind_mph;
+
+        // let condition = data.current.condition.text;
+
+        // let images = {
+        //     "sunny": "images/sunny.png",
+        //     "rain": "images/rain.png"
+        // };
+
+        // weatherIcon.src = images[condition];
+
+    } catch (error) {
+        console.log("Error:", error.message);
+    }
+}
+
+        searchBtn.addEventListener("click", () => {
+            checkWeather(searchBox.value);
+        });
+    </script>
+</body>
+</html>
